@@ -9,8 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-
-
 /**
  * @FunctionName : Launching the required browser 
  * @Description  : Launching the required browsers by giving the path or extension of the driver.

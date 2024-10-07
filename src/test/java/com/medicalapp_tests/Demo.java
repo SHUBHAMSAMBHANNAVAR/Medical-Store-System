@@ -1,4 +1,4 @@
-package com.medicalApp_tests;
+package com.medicalapp_tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

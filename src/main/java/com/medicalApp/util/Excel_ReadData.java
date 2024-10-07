@@ -23,8 +23,6 @@ public class Excel_ReadData {
 static Workbook WB;
 static Sheet sheet;
 
-
-
 public static Object[][] ReadData(String sheetName ,String FileLocation) throws IOException, InvalidFormatException {
 
 //// Open the Excel file

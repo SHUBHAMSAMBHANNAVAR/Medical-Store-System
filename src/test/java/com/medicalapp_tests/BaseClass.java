@@ -1,8 +1,10 @@
-package com.medicalApp_tests;
+package com.medicalapp_tests;
 
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+//import com.medical.Utilities.BrowserFactory;
 import com.medicalApp.util.Browser_Initialization;
 import com.medicalapp_reusablesteps.ClickOnMenuBar;
 import com.medicalapp_reusablesteps.LoginPage;
@@ -38,5 +40,12 @@ public class BaseClass extends Browser_Initialization {
 		loginpage = new LoginPage(driver);
 		menuBar = new ClickOnMenuBar(driver);
 		logout = new LogOut(driver);
-}
+	}
+	
+	@AfterTest
+	public void AppOnFinish() throws InterruptedException {
+	    Browser_Initialization.OnFinish(driver); // Use the class name to access static method
+	}
+
+	
 }
