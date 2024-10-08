@@ -21,7 +21,7 @@ import com.medicalApp_pages.CustomerDetailsPage;
  * @CreationDate: 01-10-2024
  * @Author      : Shubham
  */
-public class MedicalApp_AddCustomer extends BaseClass {
+public class TC_003_AddCustomer extends BaseClass {
 
     /**
      * @DataProvider : Provides test data from an Excel file using the ReadExcelData method.
@@ -55,12 +55,12 @@ public class MedicalApp_AddCustomer extends BaseClass {
      * @throws InterruptedException In case the thread is interrupted during sleep or wait.
      */
     @Test(dataProvider = "ReadExcelData")
-    public void MedicalAppAddCustomer_TC_003(String MenuItem, String MenuSubItem,
+    public void MedicalAppAddCustomer_TC_003(String Data_NO,String MenuItem, String MenuSubItem,
                                              String CustomerName, String ReferenceDoctor, String MobileNo, 
                                              String CustomerType) throws InterruptedException {
 
         // Check if Data_No is provided before executing the test
-        if (MenuItem != null) {
+        if (Data_NO != null) {
             //System.out.println(Data_No);
 
             // Perform login and validate the dashboard title
@@ -74,21 +74,21 @@ public class MedicalApp_AddCustomer extends BaseClass {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
             // Generate a unique mobile number using RandomPhoneNumberGenerator utility
-            String uniqueMobileNo = RandomPhoneNumberGenerator.generateUniquePhoneNumber(MobileNo);
+            String sUniqueMobileNo = RandomPhoneNumberGenerator.generateUniquePhoneNumber(MobileNo);
 
             // Add customer using the AddCustomer page object
             AddCustomerPage customer = new AddCustomerPage(driver);
-            String sNewCustomer = customer.enterCustomerDetails(CustomerName, ReferenceDoctor, uniqueMobileNo, CustomerType);
+            String sNewCustomer = customer.enterCustomerDetails(CustomerName, ReferenceDoctor, sUniqueMobileNo, CustomerType);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
             // Navigate to 'All Customer Details' page and verify customer addition
-            String Item = menuBar.clickOnTheMenuBar(MenuItem, "All Customer Details");
-            Assert.assertEquals(Item, "MSS - Customer Details");
+            String sMenuitem = menuBar.clickOnTheMenuBar(MenuItem, "All Customer Details");
+            Assert.assertEquals(sMenuitem, "MSS - Customer Details");
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
             // Validate if the newly added customer appears in the CustomerDetailsPage
-            CustomerDetailsPage NewCustDetail = new CustomerDetailsPage(driver);
-            String sCustDetail = NewCustDetail.checkCustomerDetailsPage(customer.sModifiedCustomerName);
+            CustomerDetailsPage newCustDetail = new CustomerDetailsPage(driver);
+            String sCustDetail = newCustDetail.checkCustomerDetailsPage(customer.sModifiedCustomerName);
             Assert.assertEquals(sCustDetail, customer.sModifiedCustomerName);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             

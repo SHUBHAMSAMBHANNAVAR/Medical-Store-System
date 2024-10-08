@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.medicalapp_tests.MedicalApp_AddCustomer">
+      <class name="com.medicalapp_tests.TC_002_UpdateStock_Testcase">
         <methods>
           <include name="setUp"/>
+          <include name="PurchaseOrder" invocation-numbers="0"/>
           <include name="AppOnFinish"/>
-          <include name="MedicalAppAddCustomer_TC_003"/>
         </methods>
-      </class> <!-- com.medicalapp_tests.MedicalApp_AddCustomer -->
+      </class> <!-- com.medicalapp_tests.TC_002_UpdateStock_Testcase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
