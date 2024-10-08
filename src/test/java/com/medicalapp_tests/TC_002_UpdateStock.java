@@ -23,7 +23,7 @@ import com.medicalapp_reusablesteps.LogOut;
  * @author       : Pragadeeswaran S
  */
 
-public class TC_002_UpdateStock_Testcase extends BaseClass
+public class TC_002_UpdateStock extends BaseClass
 {
 	// Data provider method to read test data from an Excel file.
 	@DataProvider(name = "ReadExcelData") 
@@ -31,7 +31,7 @@ public class TC_002_UpdateStock_Testcase extends BaseClass
         Object[][] data = null; 
         try { 
             // Reading test data from Excel sheet 
-            data = Excel_ReadData.ReadData("UpdateStock",  "C:\\Users\\shubham\\Desktop\\MedicalApplication_Prj\\test-data\\MedicalStore_InputValues.xls"); 
+            data = Excel_ReadData.ReadData("UpdateStock","./test-data/MedicalStore_InputValues.xls");
            
         } catch (Exception e) { 
             throw new RuntimeException("Failed to read test data from Excel", e); 

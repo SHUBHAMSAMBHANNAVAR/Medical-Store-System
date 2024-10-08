@@ -10,12 +10,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 /**
- * @FunctionName : Launching the required browser 
- * @Description  : Launching the required browsers by giving the path or extension of the driver.
- * @CreationDate : 26-09-2024
- * @Parameter    : String SP
- * @author       : Bhavani Y
- */
+* @FunctionName : Browser_Initialization
+* @Description : This class implements the browser setup and configuration for test automation.
+*                It provides functionality to:
+*                1. Load and manage test configuration properties
+*                2. Initialize web drivers for different browsers
+*                3. Set up browser configurations and timeouts
+*                4. Manage browser lifecycle
+*
+*                Key features:
+*                - Supports multiple browsers (Chrome, Firefox)
+*                - Configurable through properties file
+*                - Handles browser window management
+*                - Sets up implicit waits and page load timeouts
+*                - Provides cleanup functionality
+*
+* @CreationDate : October 3, 2024
+* @Author : Bhavani Y
+* @Version : 1.0
+*/
 public class Browser_Initialization {
 	public static WebDriver driver;
 	public static Properties prop;
@@ -68,11 +81,10 @@ public class Browser_Initialization {
 		//driver.manage().timeouts().implicitlyWait(TestUtile.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
 	}
-	
-	//***************************************APP STATE ONFINISH***************************************
+		//***************************************APP STATE ONFINISH***************************************
 		public static void OnFinish(WebDriver driver) throws InterruptedException
 		{
 			driver.quit();
-		}
-
+		
+	}
 	}

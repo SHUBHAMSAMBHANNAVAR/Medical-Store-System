@@ -9,11 +9,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
+<<<<<<< HEAD
  * @FunctionName : logoutApplication
  * @Description  : This class handles the logout functionality of the medical application.
  *                 It identifies the logout button using PageFactory and performs the logout action.
  * @CreationDate : 26-09-2024
  * @Author       : Bhavani
+=======
+ * @FunctionName : Logout application.
+ * @Description : Identifying the objects using page factory framework Clicking
+ *              on the logout button.
+ * @CreationDate : 26-09-2024
+ * @author : Bhavani Y
+>>>>>>> origin/master
  */
 public class LogOut {
     WebDriver driver;  // WebDriver instance for interacting with the browser
@@ -54,3 +62,4 @@ public class LogOut {
         }
     }
 }
+
