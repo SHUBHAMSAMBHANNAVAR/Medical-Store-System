@@ -47,7 +47,7 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>5.2.5 </version>
+			<version>5.3.0 </version>
 		</dependency>
 
 		<dependency>
@@ -57,8 +57,11 @@
 			<scope>test</scope>
 		</dependency>
 
-	
-
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.25.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.xmlbeans</groupId>
 			<artifactId>xmlbeans</artifactId>
