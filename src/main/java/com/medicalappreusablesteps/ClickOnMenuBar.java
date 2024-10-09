@@ -1,4 +1,4 @@
-package com.medicalapp_reusablesteps;
+package com.medicalappreusablesteps;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

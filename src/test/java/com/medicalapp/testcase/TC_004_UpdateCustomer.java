@@ -1,10 +1,14 @@
-package com.medicalapp_tests;
+package com.medicalapp.testcase;
 
 import java.io.IOException;
+import java.util.Arrays;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import com.medicalApp_pages.Medical_readData;
+
+import com.medicalApp.util.ExcelReadData;
+
 
 public class TC_004_UpdateCustomer extends BaseClass {
     
@@ -16,12 +20,14 @@ public class TC_004_UpdateCustomer extends BaseClass {
    public static Object[][] getDetails() throws IOException {
        Object data[][] = null;
        try {
-           data = Medical_readData.ReadData("UpdateCustomer");
+    	   data = ExcelReadData.ReadData("UpdateCustomer", "./TestData/MedicalStore_InputValues.xls");
        } catch (Exception e) {
-           e.printStackTrace();
-       }
-       return data;
-   }
+    	   throw new RuntimeException("Failed to read test data from Excel", e);
+	    }
+	    // Filter out rows where Data_No (first column) is null or empty
+	    return Arrays.stream(data).filter(row -> row[0] != null && !row[0].toString().trim().isEmpty()).toArray(Object[][]::new);
+	}
+   
    @Test(dataProvider = "ReadDatas")
    public void UpdateCustomer_Test(String MenuItem, String SubMenuItem, String CustomerName, String MobileNo)
            throws InterruptedException {

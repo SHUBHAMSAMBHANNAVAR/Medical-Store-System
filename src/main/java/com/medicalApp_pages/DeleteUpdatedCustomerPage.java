@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
  * This class contains elements and methods to search for a customer and delete them from the system.
  */
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,7 +30,7 @@ import com.medicalApp.util.TestUtile;
  * @Version : 1.0
  */
 
-public class Delete_UpdateCustomer {
+public class DeleteUpdatedCustomerPage {
 	/** WebDriver instance to interact with the browser */
 	private WebDriver driver;
 
@@ -51,7 +50,7 @@ public class Delete_UpdateCustomer {
 
 	private WebDriverWait wait;
 
-	public Delete_UpdateCustomer(WebDriver driver) {
+	public DeleteUpdatedCustomerPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Set timeout to 10 seconds
@@ -68,7 +67,7 @@ public class Delete_UpdateCustomer {
 			// Construct XPath to find customer in table (third column)
 			String xpath = String.format("//td[contains(@class, 'sorting_1')]/following-sibling::td[2]");
 			String sText = driver.findElement(By.xpath(xpath)).getText();
-			// System.out.println(sText);
+			
 
 			// Verify customer and perform deletion
 			if (sText.equals(sCustomerNum)) {

@@ -1,4 +1,4 @@
-package com.medicalapp_tests;
+package com.medicalapp.testcase;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -7,9 +7,9 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.medicalApp.util.Excel_ReadData;
-import com.medicalApp_pages.AddNewStockDetails;
-import com.medicalApp_pages.Verification_AddNewStock;
+import com.medicalApp.util.ExcelReadData;
+import com.medicalApp_pages.AddNewStockDetailsPage;
+import com.medicalApp_pages.VerificationAddNewStock;
 
 public class TC_001_AddNewStockDetails extends BaseClass {
 	
@@ -19,7 +19,7 @@ public class TC_001_AddNewStockDetails extends BaseClass {
        Object[][] data = null;  
        try {  
            // Reading test data from Excel sheet  
-           data = Excel_ReadData.ReadData("AddStock", "./test-data/MedicalStore_InputValues.xls");  
+           data = ExcelReadData.ReadData("AddStock", "./TestData/MedicalStore_InputValues.xls");  
        } catch (Exception e) {  
            throw new RuntimeException("Failed to read test data from Excel", e);  
        }
@@ -42,7 +42,7 @@ public class TC_001_AddNewStockDetails extends BaseClass {
 			String MenuItem_title = menuBar.clickOnTheMenuBar(MenuItem, SubMenuItem1);
 			Assert.assertEquals(MenuItem_title, "MSS - New Stock");
 
-			AddNewStockDetails AddStock = new AddNewStockDetails(driver);
+			AddNewStockDetailsPage AddStock = new AddNewStockDetailsPage(driver);
 			AddStock.CreateAddNewStock(ItemName, ManufacturerName, UnitPrice, Location, CGST, ItemDescription,
 					BatchNumber, Quantity, SGST, HSNCode, Type, DistributorName);
 
@@ -51,10 +51,9 @@ public class TC_001_AddNewStockDetails extends BaseClass {
 			Assert.assertEquals(MenuItem_titleVerf, "MSS - Stock Details");
 
 			// Step 4: Verification of newly added stock
-			Verification_AddNewStock AddStockVerf = new Verification_AddNewStock(driver);
+			VerificationAddNewStock AddStockVerf = new VerificationAddNewStock(driver);
 			AddStockVerf.VerificationSearchField(AddStock.sModifieditemName);
-			System.out.println(AddStock.sModifieditemName);
-
+			
 			// Step 5: Logout from the application
 			String Logout_title = logout.logoutApplication();
 			Assert.assertEquals(Logout_title, "Medical Application");

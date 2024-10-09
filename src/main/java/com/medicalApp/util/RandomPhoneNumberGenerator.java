@@ -1,10 +1,21 @@
 
 package com.medicalApp.util;
+
 import java.util.Random;
 
+/**
+ * Utility class for generating random phone numbers.
+ * Provides a method to generate unique phone numbers based on a given base phone number.
+ */
 public class RandomPhoneNumberGenerator {
 
-    // Method to generate a phone number with last 5 digits randomized
+    /**
+     * Generates a unique phone number by randomizing the last 5 digits of the provided base phone number.
+     *
+     * @param basePhoneNumber The base phone number to use as a starting point.
+     * @return The generated unique phone number.
+     * @throws IllegalArgumentException if the base phone number has less than or equal to 5 digits.
+     */
     public static String generateUniquePhoneNumber(String basePhoneNumber) {
         // Check if the phone number has enough length (more than 5 digits)
         if (basePhoneNumber.length() <= 5) {
@@ -21,8 +32,9 @@ public class RandomPhoneNumberGenerator {
         // Concatenate the initial part with the random 5 digits
         String uniquePhoneNumber = initialPart + randomLastFive;
 
-        // Print the generated unique phone number
-       // System.out.println("Generated unique phone number: " + uniquePhoneNumber);
+        // Print the generated unique phone number (optional)
+        // System.out.println("Generated unique phone number: " + uniquePhoneNumber);
+
         return uniquePhoneNumber;
     }
 }

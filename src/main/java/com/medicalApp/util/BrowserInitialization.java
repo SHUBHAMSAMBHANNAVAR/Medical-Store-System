@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 /**
@@ -29,7 +30,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 * @Author : Bhavani Y
 * @Version : 1.0
 */
-public class Browser_Initialization {
+public class BrowserInitialization {
 	public static WebDriver driver;
 	public static Properties prop;
 
@@ -37,7 +38,7 @@ public class Browser_Initialization {
 	 * Here inside the Testbase constructor we are creating the object for the prop
 	 * and fileinputstream by providing the path of the config file
 	 */
-	public Browser_Initialization() {
+	public BrowserInitialization() {
 		
 		try {
 			// how to read a property file
@@ -62,14 +63,14 @@ public class Browser_Initialization {
 	
 	@SuppressWarnings("deprecation")
 	public static void initialization() {
-		//***************************************APP STATE ONSTART***************************************
+		//{####******************************APP STATE ONSTART*************************############}
 		String browserName = prop.getProperty("browserName");
 		if (browserName.equals("chrome")) {
 			System.setProperty("WebDriver.chrome.driver", "./Drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browserName.equals("FF")) {
-			System.setProperty("WebDriver.Fire.Fox", "E:/Bhavani/chromedriver-win64/chromedriver.exe");
-			// driver = new GeekoDriver();
+			System.setProperty("WebDriver.Fire.Fox", "./Drivers/firefox");
+			driver = new FirefoxDriver();
 		}
 	
 		driver.manage().window().maximize();
@@ -81,7 +82,9 @@ public class Browser_Initialization {
 		//driver.manage().timeouts().implicitlyWait(TestUtile.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
 	}
-		//***************************************APP STATE ONFINISH***************************************
+	
+	
+		//{########***************APP STATE ONFINISH*************************########}
 		public static void OnFinish(WebDriver driver) throws InterruptedException
 		{
 			driver.quit();

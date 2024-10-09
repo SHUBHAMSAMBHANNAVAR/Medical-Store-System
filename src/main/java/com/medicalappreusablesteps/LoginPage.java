@@ -1,4 +1,4 @@
-package com.medicalapp_reusablesteps;
+package com.medicalappreusablesteps;
 
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;

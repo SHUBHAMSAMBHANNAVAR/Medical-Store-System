@@ -14,7 +14,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 
 
-public class UpdateStock_VerificationOfStockDetail
+public class UpdateStockVerificationOfStockDetailPage
 {	
 	WebDriver driver;
 	
@@ -64,7 +64,7 @@ public class UpdateStock_VerificationOfStockDetail
 	
 
 	// Constructor to initialize the page object with WebDriver
-	public UpdateStock_VerificationOfStockDetail(WebDriver driver) 
+	public UpdateStockVerificationOfStockDetailPage(WebDriver driver) 
 	{
 		this.driver = driver; // Assigning the WebDriver instance
 		PageFactory.initElements(driver, this);  // Initializing the elements in this class

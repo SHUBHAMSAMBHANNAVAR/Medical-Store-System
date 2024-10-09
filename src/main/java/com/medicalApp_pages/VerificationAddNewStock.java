@@ -14,7 +14,7 @@ import org.openqa.selenium.support.PageFactory;
  */ 
  
  
-public class Verification_AddNewStock 
+public class VerificationAddNewStock 
 {      
      WebDriver driver; 
       
@@ -28,7 +28,7 @@ public class Verification_AddNewStock
       
      
      // Constructor to initialize the page object with WebDriver 
-     public Verification_AddNewStock(WebDriver driver)  
+     public VerificationAddNewStock(WebDriver driver)  
      { 
           this.driver = driver; // Assigning the WebDriver instance 
           PageFactory.initElements(driver, this);  // Initializing the elements in this class 

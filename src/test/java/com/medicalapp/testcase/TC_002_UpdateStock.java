@@ -1,4 +1,4 @@
-package com.medicalapp_tests;
+package com.medicalapp.testcase;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -6,13 +6,14 @@ import java.util.Arrays;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import com.medicalApp.util.Excel_ReadData;
-import com.medicalApp_pages.UpdateStock_DeleteStock;
-import com.medicalApp_pages.UpdateStock_DeleteStockVerification;
-import com.medicalApp_pages.UpdateStock_StockDetails;
-import com.medicalApp_pages.UpdateStock_EditStock;
-import com.medicalApp_pages.UpdateStock_VerificationOfStockDetail;
-import com.medicalapp_reusablesteps.LogOut;
+
+import com.medicalApp.util.ExcelReadData;
+import com.medicalApp_pages.UpdateStockAndDeleteStockPage;
+import com.medicalApp_pages.UpdateStockAndDeleteStockVerification;
+import com.medicalApp_pages.UpdateStockAndEditStockPage;
+import com.medicalApp_pages.UpdateStockAndDetailsPage;
+import com.medicalApp_pages.UpdateStockVerificationOfStockDetailPage;
+import com.medicalappreusablesteps.LogoutPage;
 
 /**
  * @FunctionName : Test case for updating stock details.
@@ -31,7 +32,7 @@ public class TC_002_UpdateStock extends BaseClass
         Object[][] data = null; 
         try { 
             // Reading test data from Excel sheet 
-            data = Excel_ReadData.ReadData("UpdateStock","./test-data/MedicalStore_InputValues.xls");
+            data = ExcelReadData.ReadData("UpdateStock","./TestData/MedicalStore_InputValues.xls");
            
         } catch (Exception e) { 
             throw new RuntimeException("Failed to read test data from Excel", e); 
@@ -71,11 +72,11 @@ public class TC_002_UpdateStock extends BaseClass
      if (Data_NO != null)
       {   
     	//Initialized the object 
-     	UpdateStock_EditStock Edit = new UpdateStock_EditStock(driver);
-       	UpdateStock_StockDetails StockDetails = new UpdateStock_StockDetails(driver);
-    	UpdateStock_VerificationOfStockDetail VerificationOfStockDetail = new UpdateStock_VerificationOfStockDetail(driver);
-    	UpdateStock_DeleteStock DeleteStock = new UpdateStock_DeleteStock(driver);
-    	UpdateStock_DeleteStockVerification DeleteStockVerification = new UpdateStock_DeleteStockVerification(driver);
+     	UpdateStockAndEditStockPage Edit = new UpdateStockAndEditStockPage(driver);
+       	UpdateStockAndDetailsPage StockDetails = new UpdateStockAndDetailsPage(driver);
+    	UpdateStockVerificationOfStockDetailPage VerificationOfStockDetail = new UpdateStockVerificationOfStockDetailPage(driver);
+    	UpdateStockAndDeleteStockPage DeleteStock = new UpdateStockAndDeleteStockPage(driver);
+    	UpdateStockAndDeleteStockVerification DeleteStockVerification = new UpdateStockAndDeleteStockVerification(driver);
      	
     	
         // Step 1: Login to the application
@@ -111,7 +112,6 @@ public class TC_002_UpdateStock extends BaseClass
                                          Location, "", ExpiryDate);
         Assert.assertEquals(VerificationPage_title, "MSS - Stock Details");
     
-        
         // Step 7: Navigate back to the menu and submenu
         menuBar.clickOnTheMenuBar(MenuItem, SubMenuItem1);
         Assert.assertEquals(MenuItem_title, "MSS - Update Stock");
@@ -133,8 +133,8 @@ public class TC_002_UpdateStock extends BaseClass
  
         
         // Step 11: Logout from the application
-        LogOut logout = new LogOut(driver);
-        logout.logoutApplication();    
+        String Logout_title = logout.logoutApplication();
+        Assert.assertEquals(Logout_title, "Medical Application");
     }   
   }
 }

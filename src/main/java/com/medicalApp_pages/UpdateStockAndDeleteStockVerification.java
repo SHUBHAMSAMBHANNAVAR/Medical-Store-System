@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class UpdateStock_DeleteStockVerification {
+public class UpdateStockAndDeleteStockVerification {
 
     private WebDriver driver; // WebDriver instance to interact with the browser
     private WebDriverWait wait; // WebDriverWait instance for handling wait conditions
@@ -26,7 +26,7 @@ public class UpdateStock_DeleteStockVerification {
      *
      * @param driver The WebDriver instance used to interact with the browser.
      */
-    public UpdateStock_DeleteStockVerification(WebDriver driver) {
+    public UpdateStockAndDeleteStockVerification(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this); // Initialize elements in this class
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // 10 seconds timeout

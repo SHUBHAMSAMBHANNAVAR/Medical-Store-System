@@ -31,7 +31,7 @@ import java.time.Duration;
  * Page Object class representing the customer search and delete functionality.
  * This class provides methods to search for a customer and delete them from the system.
  */
-public class Search_Delete_Customer {
+public class SearchDeleteCustomerPage {
     /** The WebDriver instance to interact with the browser */
     private final WebDriver driver;
     
@@ -60,7 +60,7 @@ public class Search_Delete_Customer {
      *
      * @param driver The WebDriver instance to be used
      */
-    public Search_Delete_Customer(WebDriver driver) {
+    public SearchDeleteCustomerPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);

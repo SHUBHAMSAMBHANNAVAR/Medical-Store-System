@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author       : Pragadeeswaran S
  */
 
-public class UpdateStock_EditStock
+public class UpdateStockAndEditStockPage
 {
     WebDriver driver; // WebDriver instance to interact with the browser
     WebDriverWait wait; // WebDriverWait instance for handling wait conditions
@@ -35,7 +35,7 @@ public class UpdateStock_EditStock
      * 
      * @param driver The WebDriver instance used to interact with the browser.
      */
-    public UpdateStock_EditStock(WebDriver driver)
+    public UpdateStockAndEditStockPage(WebDriver driver)
     {
         this.driver = driver;
         PageFactory.initElements(driver, this); // Initialize elements in this class

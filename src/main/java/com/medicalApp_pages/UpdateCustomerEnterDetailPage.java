@@ -26,7 +26,7 @@ import java.time.Duration;
  * @Version : 1.0
  */
 
-public class UpdateCustomer_EnterDetail {
+public class UpdateCustomerEnterDetailPage {
 	/** WebDriver instance to interact with the browser */
 	private WebDriver driver;
 
@@ -41,7 +41,7 @@ public class UpdateCustomer_EnterDetail {
 	@FindBy(xpath = "//button[text()='Update Customer']")
 	private WebElement btnUpdate;
 
-	public UpdateCustomer_EnterDetail(WebDriver driver) {
+	public UpdateCustomerEnterDetailPage(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // 10 seconds timeout
 		PageFactory.initElements(driver, this);

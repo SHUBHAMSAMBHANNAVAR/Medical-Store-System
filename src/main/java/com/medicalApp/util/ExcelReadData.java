@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.sl.usermodel.Sheet;
+//import org.apache.poi.sl.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
@@ -19,9 +19,9 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
  */
 
 
-public class Excel_ReadData {
+public class ExcelReadData {
 static Workbook WB;
-static Sheet sheet;
+//static Sheet sheet;
 
 public static Object[][] ReadData(String sheetName ,String FileLocation) throws IOException, InvalidFormatException {
 

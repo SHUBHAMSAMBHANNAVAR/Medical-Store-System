@@ -13,7 +13,7 @@ import org.openqa.selenium.support.PageFactory;
  * @author       : Pragadeeswaran S
  */
 
-public class UpdateStock_StockDetails {
+public class UpdateStockAndDetailsPage {
 	
 	WebDriver driver;
 	// Object Repository for Itemname
@@ -77,7 +77,7 @@ public class UpdateStock_StockDetails {
 	 * 
 	 * @param driver The WebDriver instance used to interact with the browser.
 	 */
-	public UpdateStock_StockDetails(WebDriver driver)
+	public UpdateStockAndDetailsPage(WebDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this); // Initialize elements in this class

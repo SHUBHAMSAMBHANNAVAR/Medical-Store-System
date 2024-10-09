@@ -27,7 +27,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @Version : 1.0
  */
 
-public class UpdateCustomer_ClickOnEdit {
+public class UpdateCustomerClickOnEditPage {
 	private WebDriver driver;
 	private WebDriverWait wait;
 
@@ -43,7 +43,7 @@ public class UpdateCustomer_ClickOnEdit {
 	@FindBy(xpath = "//a[text()='Delete']")
 	private WebElement Btn_Delete;
 
-	public UpdateCustomer_ClickOnEdit(WebDriver driver) {
+	public UpdateCustomerClickOnEditPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));

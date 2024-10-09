@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author       : Pragadeeswaran S
  */
 
-public class UpdateStock_DeleteStock
+public class UpdateStockAndDeleteStockPage
 {
     WebDriver driver; // WebDriver instance to interact with the browser
     WebDriverWait wait; // WebDriverWait instance for handling wait conditions
@@ -36,7 +36,7 @@ public class UpdateStock_DeleteStock
      * 
      * @param driver The WebDriver instance used to interact with the browser.
      */
-    public UpdateStock_DeleteStock(WebDriver driver)
+    public UpdateStockAndDeleteStockPage(WebDriver driver)
     {
         this.driver = driver;
         PageFactory.initElements(driver, this); // Initialize elements in this class

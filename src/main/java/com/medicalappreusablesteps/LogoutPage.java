@@ -1,4 +1,4 @@
-package com.medicalapp_reusablesteps;
+package com.medicalappreusablesteps;
 
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
@@ -15,15 +15,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *                 It identifies the logout button using PageFactory and performs the logout action.
  * @CreationDate : 26-09-2024
  * @Author       : Bhavani
-=======
- * @FunctionName : Logout application.
- * @Description : Identifying the objects using page factory framework Clicking
- *              on the logout button.
- * @CreationDate : 26-09-2024
- * @author : Bhavani Y
->>>>>>> origin/master
+
  */
-public class LogOut {
+public class LogoutPage {
     WebDriver driver;  // WebDriver instance for interacting with the browser
 
     // Object Repository for Logout button
@@ -35,7 +29,7 @@ public class LogOut {
      * 
      * @param driver The WebDriver instance used to interact with the browser.
      */
-    public LogOut(WebDriver driver) {
+    public LogoutPage(WebDriver driver) {
         this.driver = driver;  // Initialize the driver
         PageFactory.initElements(driver, this);  // Initialize WebElements using PageFactory
     }

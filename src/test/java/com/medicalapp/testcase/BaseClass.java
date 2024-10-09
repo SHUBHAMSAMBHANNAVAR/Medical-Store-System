@@ -1,20 +1,18 @@
-package com.medicalapp_tests;
+package com.medicalapp.testcase;
 
 
 
 import org.testng.annotations.AfterTest;
-
 import org.testng.annotations.BeforeTest;
 
-//import com.medical.Utilities.BrowserFactory;
-import com.medicalApp.util.Browser_Initialization;
-import com.medicalApp_pages.Delete_UpdateCustomer;
-import com.medicalApp_pages.Search_Delete_Customer;
-import com.medicalApp_pages.UpdateCustomer_ClickOnEdit;
-import com.medicalApp_pages.UpdateCustomer_EnterDetail;
-import com.medicalapp_reusablesteps.ClickOnMenuBar;
-import com.medicalapp_reusablesteps.LogOut;
-import com.medicalapp_reusablesteps.LoginPage;
+import com.medicalApp.util.BrowserInitialization;
+import com.medicalApp_pages.DeleteUpdatedCustomerPage;
+import com.medicalApp_pages.SearchDeleteCustomerPage;
+import com.medicalApp_pages.UpdateCustomerClickOnEditPage;
+import com.medicalApp_pages.UpdateCustomerEnterDetailPage;
+import com.medicalappreusablesteps.ClickOnMenuBar;
+import com.medicalappreusablesteps.LoginPage;
+import com.medicalappreusablesteps.LogoutPage;
 
 /**
 * @FunctionName : BaseClass
@@ -39,15 +37,15 @@ import com.medicalapp_reusablesteps.LoginPage;
 * @Version : 1.0
 */
 
-public class BaseClass extends Browser_Initialization {
+public class BaseClass extends BrowserInitialization {
 // Declaring page objects for different functionalities
 	LoginPage loginpage;                      // Handles login functionality
 	ClickOnMenuBar menuBar;                   // Manages menu navigation
-	UpdateCustomer_ClickOnEdit ClickOnEdit;   // Handles clicking edit for customer update
-	UpdateCustomer_EnterDetail EnterDetail;   // Manages entering customer details
-	Delete_UpdateCustomer Delete;             // Handles customer deletion
-	Search_Delete_Customer notFound;          // Manages customer search and not found scenarios
-	LogOut logout;                            // Handles logout functionality
+	UpdateCustomerClickOnEditPage ClickOnEdit;   // Handles clicking edit for customer update
+	UpdateCustomerEnterDetailPage EnterDetail;   // Manages entering customer details
+	DeleteUpdatedCustomerPage Delete;             // Handles customer deletion
+	SearchDeleteCustomerPage notFound;          // Manages customer search and not found scenarios
+	LogoutPage logout;                            // Handles logout functionality
 
 	/**
 	 * Constructor for BaseClass Calls the parent class constructor to initialize
@@ -71,17 +69,17 @@ public class BaseClass extends Browser_Initialization {
 		// Create instances of all page objects with the initialized WebDriver
 		loginpage = new LoginPage(driver);
 		menuBar = new ClickOnMenuBar(driver);
-		ClickOnEdit = new UpdateCustomer_ClickOnEdit(driver);
-		EnterDetail = new UpdateCustomer_EnterDetail(driver);
-		Delete = new Delete_UpdateCustomer(driver);
-		notFound = new Search_Delete_Customer(driver);
-		logout = new LogOut(driver);
+		ClickOnEdit = new UpdateCustomerClickOnEditPage(driver);
+		EnterDetail = new UpdateCustomerEnterDetailPage(driver);
+		Delete = new DeleteUpdatedCustomerPage(driver);
+		notFound = new SearchDeleteCustomerPage(driver);
+		logout = new LogoutPage(driver);
 	}
 
 	
 	@AfterTest
 	public void AppOnFinish() throws InterruptedException {
-	    Browser_Initialization.OnFinish(driver); // Use the class name to access static method
+	    BrowserInitialization.OnFinish(driver); // Use the class name to access static method
 	}
 
 	
