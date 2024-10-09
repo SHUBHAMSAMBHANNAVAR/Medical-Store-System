@@ -19,7 +19,7 @@ public class TC_001_AddNewStockDetails extends BaseClass {
        Object[][] data = null;  
        try {  
            // Reading test data from Excel sheet  
-           data = ExcelReadData.ReadData("AddStock", "./TestData/MedicalStore_InputValues.xls");  
+           data = ExcelReadData.ReadData("AddStock", "./TestData/MedicalStoreTestData.xls");  
        } catch (Exception e) {  
            throw new RuntimeException("Failed to read test data from Excel", e);  
        }

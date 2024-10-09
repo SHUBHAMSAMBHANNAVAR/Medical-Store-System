@@ -34,7 +34,7 @@ public class TC_003_AddCustomer extends BaseClass {
 	    Object[][] data = null;
 	    try {
 	        // Reading test data from Excel sheet
-	        data = ExcelReadData.ReadData("AddCustomer", "./TestData/MedicalStore_InputValues.xls");
+	        data = ExcelReadData.ReadData("AddCustomer", "./TestData/MedicalStoreTestData.xls");
 	    } catch (Exception e) {
 	        throw new RuntimeException("Failed to read test data from Excel", e);
 	    }

@@ -8,6 +8,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.medicalApp.util.ExcelReadData;
+import com.medicalApp_pages.AddCustomerPage;
 
 
 public class TC_004_UpdateCustomer extends BaseClass {
@@ -20,7 +21,7 @@ public class TC_004_UpdateCustomer extends BaseClass {
    public static Object[][] getDetails() throws IOException {
        Object data[][] = null;
        try {
-    	   data = ExcelReadData.ReadData("UpdateCustomer", "./TestData/MedicalStore_InputValues.xls");
+    	   data = ExcelReadData.ReadData("UpdateCustomer", "./TestData/MedicalStoreTestData.xls");
        } catch (Exception e) {
     	   throw new RuntimeException("Failed to read test data from Excel", e);
 	    }
@@ -41,6 +42,8 @@ public class TC_004_UpdateCustomer extends BaseClass {
            System.out.println("The title for the menubar page:" + sMenu_Title);
            Assert.assertEquals(sMenu_Title, "MSS - Update Customer");
            
+           //AddCustomerPage customer = new AddCustomerPage(driver);
+          // String sClickEdit = ClickOnEdit.clickOnEdit(customer.sModifiedCustomerName);
            String sClickEdit = ClickOnEdit.clickOnEdit(CustomerName);
            System.out.println("The title for the clickOnEdit page:" + sClickEdit);
            Assert.assertEquals(sClickEdit, "MSS - Update Client");
@@ -49,9 +52,12 @@ public class TC_004_UpdateCustomer extends BaseClass {
            System.out.println("The title for the enterDetail page:" + sDetail);
            Assert.assertEquals(sDetail, "MSS - Update Customer");
            
+           
            String sDelete_Edited = Delete.DeleteUpdateCustomer(MobileNo);
            System.out.println("The title for the DeleteCustomer page:" + sDelete_Edited);
            Assert.assertEquals(sDelete_Edited, "MSS - Update Customer");
+           
+           //String sSearch_Delete = notFound.delete_customer(customer.sModifiedCustomerName); 
            
            String sSearch_Delete = notFound.delete_customer(CustomerName);
            System.out.println("The title for the notFound page:" + sSearch_Delete);
