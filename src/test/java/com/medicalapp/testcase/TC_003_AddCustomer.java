@@ -1,4 +1,4 @@
-package com.medicalapp_tests;
+package com.medicalapp.testcase;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.medicalApp.util.Excel_ReadData;
+import com.medicalApp.util.ExcelReadData;
 import com.medicalApp.util.RandomPhoneNumberGenerator;
 import com.medicalApp_pages.AddCustomerPage;
 import com.medicalApp_pages.CustomerDetailsPage;
@@ -34,7 +34,7 @@ public class TC_003_AddCustomer extends BaseClass {
 	    Object[][] data = null;
 	    try {
 	        // Reading test data from Excel sheet
-	        data = Excel_ReadData.ReadData("AddCustomer", "./test-data/MedicalStore_InputValues.xls");
+	        data = ExcelReadData.ReadData("AddCustomer", "./TestData/MedicalStore_InputValues.xls");
 	    } catch (Exception e) {
 	        throw new RuntimeException("Failed to read test data from Excel", e);
 	    }
@@ -78,7 +78,7 @@ public class TC_003_AddCustomer extends BaseClass {
 
             // Add customer using the AddCustomer page object
             AddCustomerPage customer = new AddCustomerPage(driver);
-            String sNewCustomer = customer.enterCustomerDetails(CustomerName, ReferenceDoctor, sUniqueMobileNo, CustomerType);
+            customer.enterCustomerDetails(CustomerName, ReferenceDoctor, sUniqueMobileNo, CustomerType);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
             // Navigate to 'All Customer Details' page and verify customer addition
@@ -93,8 +93,8 @@ public class TC_003_AddCustomer extends BaseClass {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             
             // Log out and verify the logout title
-            String Logout_title = logout.logoutApplication();
-            Assert.assertEquals(Logout_title, "Medical Application");
+            String sLogouttitle = logout.logoutApplication();
+            Assert.assertEquals(sLogouttitle, "Medical Application");
                     
         }
     }
