@@ -7,7 +7,7 @@
         <methods>
           <include name="AppOnFinish"/>
           <include name="setUp"/>
-          <include name="UpdateCustomer_Test" invocation-numbers="0"/>
+          <include name="UpdateCustomer_Test"/>
         </methods>
       </class> <!-- com.medicalapp.testcase.TC_004_UpdateCustomer -->
     </classes>

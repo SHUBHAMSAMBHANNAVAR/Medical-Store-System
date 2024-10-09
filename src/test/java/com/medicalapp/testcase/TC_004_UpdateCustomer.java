@@ -33,29 +33,29 @@ public class TC_004_UpdateCustomer extends BaseClass {
            throws InterruptedException {
        if (MenuItem != null) {
            System.out.println(MenuItem);
-           String Login_Title = loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
-           System.out.println("The title for the login page:" + Login_Title);
-           Assert.assertEquals(Login_Title, "MSS - Dashboard");
+           String sLogin_Title = loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
+           System.out.println("The title for the login page:" + sLogin_Title);
+           Assert.assertEquals(sLogin_Title, "MSS - Dashboard");
            
-           String Menu_Title = menuBar.clickOnTheMenuBar(MenuItem, SubMenuItem);
-           System.out.println("The title for the menubar page:" + Menu_Title);
-           Assert.assertEquals(Menu_Title, "MSS - Update Customer");
+           String sMenu_Title = menuBar.clickOnTheMenuBar(MenuItem, SubMenuItem);
+           System.out.println("The title for the menubar page:" + sMenu_Title);
+           Assert.assertEquals(sMenu_Title, "MSS - Update Customer");
            
-           String ClickEdit = ClickOnEdit.clickOnEdit(CustomerName);
-           System.out.println("The title for the clickOnEdit page:" + ClickEdit);
-           Assert.assertEquals(ClickEdit, "MSS - Update Client");
+           String sClickEdit = ClickOnEdit.clickOnEdit(CustomerName);
+           System.out.println("The title for the clickOnEdit page:" + sClickEdit);
+           Assert.assertEquals(sClickEdit, "MSS - Update Client");
            
-           String Detail = EnterDetail.enterDetail(MobileNo);
-           System.out.println("The title for the enterDetail page:" + Detail);
-           Assert.assertEquals(Detail, "MSS - Update Customer");
+           String sDetail = EnterDetail.enterDetail(MobileNo);
+           System.out.println("The title for the enterDetail page:" + sDetail);
+           Assert.assertEquals(sDetail, "MSS - Update Customer");
            
-           String Delete_Edited = Delete.DeleteUpdateCustomer(MobileNo);
-           System.out.println("The title for the DeleteCustomer page:" + Delete_Edited);
-           Assert.assertEquals(Delete_Edited, "MSS - Update Customer");
+           String sDelete_Edited = Delete.DeleteUpdateCustomer(MobileNo);
+           System.out.println("The title for the DeleteCustomer page:" + sDelete_Edited);
+           Assert.assertEquals(sDelete_Edited, "MSS - Update Customer");
            
-           String Search_Delete = notFound.delete_customer(CustomerName);
-           System.out.println("The title for the notFound page:" + Search_Delete);
-           Assert.assertEquals(Search_Delete, "MSS - Update Customer");
+           String sSearch_Delete = notFound.delete_customer(CustomerName);
+           System.out.println("The title for the notFound page:" + sSearch_Delete);
+           Assert.assertEquals(sSearch_Delete, "MSS - Update Customer");
            
            String log_Out = logout.logoutApplication();
            System.out.println("The title for the  logOutpage:" + log_Out);
